@@ -1,0 +1,25 @@
+## Example:
+## Input: CCCHHHHANGGESS
+## Output: 3C4H1A1N2G1E2S
+
+def count_letters(input):
+    result = ''
+    nth_letter = 0
+    letter_count = 1
+    while nth_letter < (len(input)):
+        if nth_letter == len(input)-1:
+            result += str(letter_count)
+            result += input[nth_letter]
+            break
+        elif input[nth_letter] == input[nth_letter+1]:
+            nth_letter += 1
+            letter_count += 1
+        else:
+            result += str(letter_count)
+            result += input[nth_letter]
+            letter_count = 1
+            nth_letter += 1
+    return result
+
+u_i = list(input("Enter a word: "))
+print(count_letters(u_i))
