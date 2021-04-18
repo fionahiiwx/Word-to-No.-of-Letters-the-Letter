@@ -1,0 +1,20 @@
+## Capable of 2 digit numbers for that number of letter
+
+def reverse_Sunday(message):
+    Sunday_message = ''
+    i = 0
+    while i <= (len(message) - 1):
+        if message[i].isnumeric():
+            if message[i+1].isnumeric():
+                j = int(message[i]) * 10 + int(message[i+1])
+                k = 2
+            else:
+                j = int(message[i])
+                k = 1
+            while j > 0:
+                Sunday_message += message[i+k]
+                j -= 1
+            i += k+1
+    return Sunday_message
+
+print(reverse_Sunday("10S1U16N7D2A1Y"))
