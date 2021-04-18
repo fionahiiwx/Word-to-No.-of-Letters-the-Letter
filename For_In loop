@@ -1,0 +1,18 @@
+## Example
+## Input: WWWOOOOORDD
+## Ouput: 3W5O1R2D
+
+input = list(input("Enter a word: "))
+input.append(' ')
+output = []
+count = 1
+
+for i in range(1, len(input)):
+    if input[i] == input[i-1]:
+        count += 1
+    else:
+        output.append(str(count))
+        output.append(input[i-1])
+        count = 1
+
+print("".join(output))
